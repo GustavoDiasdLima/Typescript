@@ -15,7 +15,7 @@ export interface Planta {
 
 
 @Component({
-  imports: [RouterOutlet, ButtonModule, CardModule],
+  imports: [RouterOutlet, ButtonModule, CardModule], //imports do OptimusUI
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -41,7 +41,8 @@ export class App {
       dataCompra: "",
       rara: false,
     };
-    this.plantas.push(novaPlanta)
+    this.plantas.push(novaPlanta);
+    
     console.log("Planta criada com sucesso")
     //console.log(novaPlanta)
 
@@ -59,7 +60,7 @@ listarPlantas():void{ //Listar plantas
 }
 }
 //atualizar - alterar
-alterarPlanta():void{
+alterarPlantas():void{
   let id = Number(prompt("Digite o id da planta para alterar"));
   let planta = this.plantas.find((p) => p.id == id); //busca o id
 
@@ -68,15 +69,14 @@ alterarPlanta():void{
     return;
   }
   let novoNome = prompt('Novo nome(Enter para mantar o atual):' ) ?? "";
-  let novoImagem = prompt('Nova imagem(Enter para mantar o atual):' ) ?? "";
+
 
   if(novoNome) planta.nome = novoNome;
-  if(novoImagem) planta.imagem = novoImagem;
 
   console.log("planta atualizada!!");
 }
 //excluir - deletar
-deletarPlanta():void{
+deletarPlantas():void{
    const id = Number(prompt("Digite o id da planta para deletar"));
    const index = this.plantas.findIndex((p) => p.id === id);
 
