@@ -1,4 +1,4 @@
-  <div class="w-full h-[120px] bg-emerald-600 text-white text-[45px] font-bold"> <!--wfull ocupa a largura toda, h20 altura 80px-->
+  <div class="w-full h-[120px] bg-emerald-600 text-white text-[45px] font-bold flex"> <!--wfull ocupa a largura toda, h20 altura 80px-->
     <h1 class="p-4 font-[Open_Sans]">Plantas Raras & Kras</h1>
         <div class="flex gap-2 p-2">
             <p-button label="Criar" (click)="criarPlantas()"/> <!--Eventos de click com os métodos do crud-->
@@ -14,15 +14,15 @@
                 <ng-template #header> 
                   <img alt="Planta" class="w-full h-[500px] object-cover" src="imagens/monstera1.webp" /> <!--property binding, vai pegar a imagem do array, nao vai usar imagem fixa-->
                 </ng-template>
-                <ng-template #title> {{ planta.nome }} </ng-template> <!--pega o nome que ta no array-->
+                <ng-template #title> {{ planta.nome }} </ng-template> <!--pega o nome que ta no array e substitui-->
                 <ng-template #subtitle> Planta rara </ng-template>
                 <p>
                     {{ planta.preco }}
                 </p>
                 <ng-template #footer>
                     <div class="flex gap-4 mt-1">
-                        <p-button label="Cancel" severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
-                        <p-button label="Save" class="w-full" styleClass="w-full" />
+                        <p-button label="Cancelar" severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
+                        <p-button label="Detalhes" class="w-full" styleClass="w-full" />
                     </div>
                 </ng-template>
             </p-card>
